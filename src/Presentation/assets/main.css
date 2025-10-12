@@ -1,0 +1,84 @@
+:root {
+    --bg: #0d0f14;
+    --fg: #e6edf3;
+    --muted: #8b949e;
+    --accent: #2f81f7;
+}
+
+* {
+    box-sizing: border-box
+}
+
+html, body {
+    height: 100%
+}
+
+body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--fg);
+    font: 14px/1.4 ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
+#app {
+    display: flex;
+    flex-direction: column;
+    height: 100%
+}
+
+#header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 12px;
+    border-bottom: 1px solid #222;
+    color: var(--muted)
+}
+
+#screen {
+    flex: 1;
+    overflow: auto;
+    padding: 12px
+}
+
+.line {
+    white-space: pre-wrap;
+    word-break: break-word
+}
+
+.prompt {
+    display: flex;
+    gap: .5rem;
+    align-items: flex-start
+}
+
+.input {
+    flex: 1;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: var(--fg);
+    font: inherit
+}
+
+.meta {
+    color: var(--muted)
+}
+
+.kbd {
+    color: var(--muted);
+    font-size: 12px
+}
+
+.btn {
+    background: #161b22;
+    border: 1px solid #30363d;
+    color: var(--fg);
+    padding: 4px 10px;
+    border-radius: 6px;
+    cursor: pointer
+}
+
+.btn:hover {
+    background: #1c2128
+}

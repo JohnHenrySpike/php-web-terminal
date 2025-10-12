@@ -1,0 +1,37 @@
+{
+  "name": "johnhenryspike/php-web-terminal",
+  "description": "A minimal single-endpoint PHP web terminal emulator with Bearer auth.",
+  "type": "library",
+  "license": "MIT",
+  "keywords": ["terminal", "web", "php", "sandbox", "emulator"],
+  "homepage": "https://github.com/JohnHenrySpike/php-web-terminal",
+  "version": "1.0.0",
+  "authors": [
+    {
+      "name": "JohnHenrySpike",
+      "email": "JohnHenrySpike@gmail.com"
+    }
+    
+  ],
+  "require": {
+    "php": ">=8.1",
+    "ext-ctype": "*"
+  },
+  "suggest": {
+    "ext-json": "Needed for JSON encoding/decoding (usually enabled by default)."
+  },
+  "autoload": {
+    "psr-4": {
+      "SpikeTerminal\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+    }
+  },
+  "extra": {
+    "branch-alias": {
+      "dev-main": "1.x-dev"
+    }
+  }
+}
