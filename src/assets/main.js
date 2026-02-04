@@ -45,7 +45,6 @@ function hideAuth() {
 
 async function ensureToken() {
     const existing = getToken();
-    console.log('Existing token:', existing);
     if (existing) return existing;
     showAuth();
     if (!tokenWaiter) {
@@ -54,7 +53,6 @@ async function ensureToken() {
                 const tok = tokenInput.value;
                 hideAuth();
                 setToken(tok);
-                console.log('Token set.');
                 print('Token set.');
                 resolve(tok);
                 tokenWaiter = null;
@@ -65,8 +63,6 @@ async function ensureToken() {
                 }
             };
         });
-    } else {
-        console.log('Token waiter already exists');
     }
     return tokenWaiter;
 }
@@ -86,7 +82,7 @@ async function run(cmd) {
         const token = await ensureToken();
         const res = await fetch(location.href, {
             method: 'POST',
-            headers: {'Content-Type': 'application/json', 'Authorization': 'Bearer ' + token},
+            headers: {'Content-Type': 'application/json', 'apiKey': token},
             body: JSON.stringify({command: cmd})
         });
         if (res.status === 401) {
@@ -98,6 +94,9 @@ async function run(cmd) {
         const data = await res.json();
         if (!data.ok) {
             print('Error: ' + (data.error || res.status));
+            if (data.output && data.output.length) {
+                print('Error message: ' + (data.output || res.status));
+            }
             return;
         }
         if (data.action === 'clear') {
