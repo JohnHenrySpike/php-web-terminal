@@ -1,13 +1,12 @@
 <?php
 declare(strict_types=1);
 
-namespace SpikeTerminal\Application;
+namespace SpikeTerminal;
 
 use LogicException;
 use SpikeTerminal\Commands\DateCommand;
 use SpikeTerminal\Commands\HelpCommand;
 use SpikeTerminal\Commands\ServerCommand;
-use SpikeTerminal\Domain\CommandInterface;
 
 class CommandRegistry implements CommandRegistryInterface
 {

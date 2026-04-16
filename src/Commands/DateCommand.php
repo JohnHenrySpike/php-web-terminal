@@ -3,7 +3,7 @@ declare(strict_types=1);
 
 namespace SpikeTerminal\Commands;
 
-use SpikeTerminal\Domain\CommandInterface;
+use SpikeTerminal\CommandInterface;
 
 class DateCommand implements CommandInterface
 {

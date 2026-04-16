@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace SpikeTerminal\Application;
+namespace SpikeTerminal;
 
 use JsonSerializable;
 
@@ -16,12 +16,9 @@ class TerminalResponse implements JsonSerializable
         public ?string $error = null,
     ) {}
 
-    public function jsonResponse(): void
+    public function jsonResponse(): string
     {
-        header("Content-Type: application/json");
-        http_response_code($this->code);
-        echo json_encode($this);
-        exit;
+        return json_encode($this);
     }
 
     /**

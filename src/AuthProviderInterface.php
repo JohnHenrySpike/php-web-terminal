@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace SpikeTerminal\Application;
+namespace SpikeTerminal;
 
 use Exception;
 

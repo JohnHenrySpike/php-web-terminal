@@ -2,9 +2,7 @@
 
 declare(strict_types=1);
 
-namespace SpikeTerminal\Application;
-
-use SpikeTerminal\Domain\CommandInterface;
+namespace SpikeTerminal;
 
 interface CommandRegistryInterface
 {

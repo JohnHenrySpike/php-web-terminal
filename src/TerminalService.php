@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace SpikeTerminal\Application;
+namespace SpikeTerminal;
 
 use Throwable;
 
@@ -25,9 +25,11 @@ final class TerminalService
         return $this->registry;
     }
 
-    public function renderInterface(): void
+    public function renderInterface(): string
     {
-        require(__DIR__ . '/../assets/main.php');
+        ob_start();
+        require __DIR__ . '/../assets/main.php';
+        return ob_get_clean();
     }
 
     public function run(string $line): TerminalResponse

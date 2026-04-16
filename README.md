@@ -26,8 +26,7 @@ Autoloading follows PSR-4: the `App\\` namespace maps to `src/`.
 
 ```php
 <?php
-use SpikeTerminal\Application\{TerminalService};
-use SpikeTerminal\Application\CommandRegistry;
+use SpikeTerminal\CommandRegistry;
 require __DIR__ . '/vendor/autoload.php';
 $registry = new CommandRegistry();
 $registry->register(new SomeCommand($registry));

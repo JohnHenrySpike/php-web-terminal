@@ -3,8 +3,8 @@ declare(strict_types=1);
 
 namespace SpikeTerminal\Commands;
 
-use SpikeTerminal\Application\CommandRegistry;
-use SpikeTerminal\Domain\CommandInterface;
+use SpikeTerminal\CommandInterface;
+use SpikeTerminal\CommandRegistry;
 
 class HelpCommand implements CommandInterface
 {

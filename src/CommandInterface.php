@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace SpikeTerminal\Domain;
+namespace SpikeTerminal;
 
 interface CommandInterface
 {
