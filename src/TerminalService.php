@@ -28,19 +28,14 @@ final class TerminalService
     public function renderInterface(): string
     {
         ob_start();
-        require __DIR__ . '/../assets/main.php';
+        require __DIR__ . '/assets/main.php';
         return ob_get_clean();
     }
 
     public function run(string $line): TerminalResponse
     {
         if ($this->authProvider) {
-            try {
-                $this->authProvider->auth();
-            } catch (Throwable $e) {
-                return new TerminalResponse(ok: false, code: 401, output: $e->getMessage());
-            }
-
+            $this->authProvider->auth();
         }
         $line = trim($line);
         if ($line === '') {

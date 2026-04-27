@@ -10,7 +10,6 @@ class TerminalResponse implements JsonSerializable
 {
     public function __construct(
         public bool $ok,
-        private readonly int $code = 200,
         public ?string $output = null,
         public ?string $action = null,
         public ?string $error = null,
