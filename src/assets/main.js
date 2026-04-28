@@ -80,10 +80,11 @@ async function run(cmd) {
     }
     try {
         const token = await ensureToken();
-        const res = await fetch(location.href, {
-            method: 'POST',
-            headers: {'Content-Type': 'application/json', 'apiKey': token},
-            body: JSON.stringify({command: cmd})
+        const url = new URL(location.href);
+        url.searchParams.set('command', cmd);
+        const res = await fetch(url, {
+            method: 'GET',
+            headers: {'apiKey': token},
         });
         if (res.status === 401) {
             clearToken();
